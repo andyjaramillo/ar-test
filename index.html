@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+    <script type="text/javascript" src="basic.js"></script>
+  </head>
+  <body>
+<!-- 
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+      <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+      <a-box color="red" gps-new-entity-place="latitude: 300; longitude: 300" depth="10" height="10" width="10"></a-box>
+  </a-scene> -->
+
+<a-scene embedded arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' vr-mode-ui='enabled: false'>
+  <a-marker preset="hiro">
+    <a-box id="box" position="-0.5 0 -3" material="color: red;"   >
+      <a-animation attribute="rotation" 
+      dur="3000"
+      to="360 360 0"
+      repeat="indefinite"
+      easings="linear">
+    </a-animation>
+    </a-box>
+  </a-marker>
+  
+</a-scene>
+  </body>
+</html>
